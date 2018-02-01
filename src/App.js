@@ -1,29 +1,29 @@
 
 import React, { Component } from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 import {
-  Col,
   Grid,
   PageHeader,
-  Row
 } from 'react-bootstrap'
 import IndexPage from './components/indexPage';
 import './App.css';
 import Article from './components/articlePage'
 
+
 class App extends Component {
 	constructor(props){
 	  super(props)
 	 	 this.state = {
-	      article: [
+	      articles: [
 	        {
-	          key: 1,
-	          name: 'Times',
-	          about: 'sports and more...'
+	          id: 1,
+	          title: 'Times',
+	          body: 'sports and more...'
 	        },
 	        {
 	          id: 2,
-	          name: 'LA News',
-	          about: 'cats & dogs'
+	          title: 'LA News',
+	          body: 'cats & dogs'
 	        }
 
 	      ]
@@ -35,15 +35,18 @@ class App extends Component {
 	      <div className="App">
 	        <header className="Page-header">
 	          <h1 className="App-title">Welcome to WiKi•MåX</h1>
-	        </header>			  
+	        </header>	
+					<IndexPage articles={this.state.articles}/>	  
 	      </div>
 				<div className="IndexPage"/>
 
 			
 			</Grid>
+
 	    );
 	  }
 
 }
+
 
 export default App;

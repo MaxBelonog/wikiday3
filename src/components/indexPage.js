@@ -12,17 +12,18 @@ class IndexPage extends Component {
       <Row>
         <Col>
           <ListGroup>
-            {this.indexPage.map((article, index) =>{
+            {this.props.articles.map((article, index) =>{
               return (
-                <ListGroupItem>
-                  key={index}                  
-                    <span className='Articles list'>
-                      {article.name}
-                    </span>
-           </ListGroupItem>
+                <ListGroupItem key={index}> 
+                    <p className='Articles list'>
+                      {article.title}
+                    </p>
+                    <p>
+                    {article.body}
+                    </p>
+               </ListGroupItem>
               )
             })}
-              return ()
           </ListGroup>
         </Col>
       </Row>
